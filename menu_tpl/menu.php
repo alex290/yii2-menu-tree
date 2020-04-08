@@ -12,7 +12,7 @@ if (count($https) > 1 || count($http) > 1 ) {
 }
 
 $classLink = '';
-if (array_key_exists('classLink', $search_array)) {
+if (array_key_exists('classLink', $category)) {
     $classLink = $category['classLink'];
 }
 
@@ -23,9 +23,9 @@ if (Url::to([$MenuFull]) == Yii::$app->request->url) {
 }
 ?>
 <?php if (!isset($category['childs'])) : ?>
-    <li class="nav-item <?= $classLi ?>"><a class="nav-link" href="<?= $newUrl ?>" <?= $category['attribute'] ?>><?= $category['name'] ?></a></li>
+    <li class="nav-item <?= $classLi ?>"><a class="nav-link <?= $classLink ?>" href="<?= $newUrl ?>" <?= $category['attribute'] ?>><?= $category['name'] ?></a></li>
 <?php else : ?>
-    <li class="nav-item dropdown <?= $classLi ?>"><a href="<?= $newUrl ?>" class="dropdown-toggle" data-hover="dropdown" data-delay="100" data-toggle="dropdown" aria-expanded="false"><?= $category['name'] ?> <b class="caret"></b></a>
+    <li class="nav-item dropdown <?= $classLi ?>"><a href="<?= $newUrl ?>" class="dropdown-toggle <?= $classLink ?>" data-hover="dropdown" data-delay="100" data-toggle="dropdown" aria-expanded="false"><?= $category['name'] ?> <b class="caret"></b></a>
         <ul class="dropdown-menu">
             <?= $this->getMenuHtml($category['childs']) ?>
         </ul>
