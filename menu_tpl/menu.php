@@ -11,6 +11,11 @@ if (count($https) > 1 || count($http) > 1 ) {
     $newUrl = Url::to([$MenuFull]);
 }
 
+$classLink = '';
+if (array_key_exists('classLink', $search_array)) {
+    $classLink = $category['classLink'];
+}
+
 if (Url::to([$MenuFull]) == Yii::$app->request->url) {
     $classLi = 'active';
 } else {

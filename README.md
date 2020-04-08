@@ -41,5 +41,6 @@ php composer.phar require --prefer-dist alex290/yii2-menu-tree "*"
 	'link' - Ссылка - varchar,
 	'weight' - Вес(порядок)  - int,
 	'attribute' - Атрибут ссылк - text',
+	'classLink' - Класс ссылки - text', // Необязательно
 
 На выходе получается стандартный Bootstrap Dropdown меню
